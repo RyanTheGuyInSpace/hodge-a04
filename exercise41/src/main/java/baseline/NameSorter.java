@@ -5,31 +5,72 @@
 
 package baseline;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class NameSorter {
-    ArrayList<String> names;
+    public LinkedList<String> names = new LinkedList<>();
+    private BufferedReader reader;
+    private BufferedWriter writer;
 
     /**
      * Reads names from the specified file and stores them inside the names variable.
      * @param fileName The name of the file to read the names from.
      */
-    private void readNames(String fileName) {
+    public void readNames(String fileName) {
+        try {
+            reader = new BufferedReader(new FileReader(fileName));
 
+            String line = reader.readLine();
+            while(line != null) {
+                names.add(line);
+
+                line = reader.readLine();
+            }
+
+        } catch (IOException e) {
+            System.out.println("ERROR");
+            e.printStackTrace();
+            return;
+        }
     }
 
     /**
      * Sorts the names variable alphabetically.
      */
-    private void sortNames() {
-
+    public void sortNames() {
+        Collections.sort(names);
     }
 
     /**
      * Writes all data inside the names variable to the specified file.
      * @param fileName The name of the file to write the names into.
      */
-    private void writeNames(String fileName) {
+    public void writeNames(String fileName) {
+
+        try {
+            writer = new BufferedWriter(new FileWriter(fileName));
+
+            writer.write(String.format("Total of %d names", names.size()));
+            writer.newLine();
+            writer.write("-------------------");
+            writer.newLine();
+
+            for (int i = 0; i < names.size(); i++) {
+                writer.write(names.get(i));
+                writer.newLine();
+            }
+
+            writer.flush();
+
+        } catch (IOException e) {
+            System.out.println("ERROR");
+            e.printStackTrace();
+            return;
+        }
 
     }
 }

@@ -14,5 +14,13 @@ public class Solution41 {
         // Sort the names inside the NameSorter names variable
         // Print the sorted list of names into an output file along with a line counting the number of names written
 
+        NameSorter sorter = new NameSorter();
+
+        sorter.readNames("data/exercise41_input.txt");
+
+        sorter.sortNames();
+
+        sorter.writeNames("data/exercise41_output.txt");
+
     }
 }
