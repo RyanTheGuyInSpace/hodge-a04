@@ -1,0 +1,18 @@
+@startuml
+
+class Employee {
+    -String firstName
+    -String lastName
+    -int salary
+}
+
+class EmployeeReader {
+    -LinkedList<Employee> Employee
+
+    +readEmployee(String fileName)
+    +saveEmployee(string fileName)
+    +writeEmployees(string fileName)
+
+}
+
+@enduml
