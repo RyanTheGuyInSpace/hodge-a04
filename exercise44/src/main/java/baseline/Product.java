@@ -14,6 +14,8 @@ public class Product {
      * Prints out the details of the specified product.
      */
     public void printDetails() {
-
+        System.out.println(String.format("Name: %s", this.name));
+        System.out.println(String.format("Price: %.2f", this.price));
+        System.out.println(String.format("Name: %d", this.quantity));
     }
 }

@@ -1,0 +1,7 @@
+{
+  "products" : [
+    {"name": "Car", "price": 20.00, "quantity": 1 },
+    {"name": "Boat", "price": 30.00, "quantity": 2 },
+    {"name": "Giraffe", "price": 50.00, "quantity": 3 }
+  ]
+}
