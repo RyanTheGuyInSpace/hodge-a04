@@ -11,5 +11,10 @@ public class Solution42 {
         // Declare an instance of EmployeeReader
         // Use EmployeeReader to read in all the employees
         // Print the employees back out
+
+        EmployeeReader reader = new EmployeeReader();
+
+        reader.readEmployees("data/exercise42_input.txt");
+        reader.writeEmployees("data/exercise42_output.txt");
     }
 }

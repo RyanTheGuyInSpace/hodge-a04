@@ -8,6 +8,8 @@ class Employee {
 
 class EmployeeReader {
     -LinkedList<Employee> Employee
+    -BufferedReader reader;
+    -BufferedWriter writer;
 
     +readEmployee(String fileName)
     +saveEmployee(string fileName)
