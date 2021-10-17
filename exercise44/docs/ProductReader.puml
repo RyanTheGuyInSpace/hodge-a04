@@ -1,0 +1,18 @@
+@startuml
+
+class Product {
+    -String name;
+    -double price;
+    -int quantity;
+}
+
+class ProductReader {
+    -List<Product> products;
+    -Gson gsonReader;
+
+    +readProducts(String fileName);
+    +findProduct(String productName);
+    +printProduct(Product product);
+}
+
+@enduml
