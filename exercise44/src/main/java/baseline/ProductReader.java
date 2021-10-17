@@ -31,11 +31,5 @@ public class ProductReader {
         return new Product();
     }
 
-    /**
-     * Prints out the details of the specified product.
-     * @param product The product whose details will be printed out.
-     */
-    public void printProduct(Product product) {
 
-    }
 }

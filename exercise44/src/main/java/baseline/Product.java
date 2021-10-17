@@ -6,7 +6,14 @@
 package baseline;
 
 public class Product {
-    String name;
-    double price;
-    int quantity;
+    public String name;
+    public double price;
+    public int quantity;
+
+    /**
+     * Prints out the details of the specified product.
+     */
+    public void printDetails() {
+
+    }
 }

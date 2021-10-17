@@ -4,6 +4,8 @@ class Product {
     -String name;
     -double price;
     -int quantity;
+
+    +printProduct();
 }
 
 class ProductReader {
@@ -12,7 +14,6 @@ class ProductReader {
 
     +readProducts(String fileName);
     +findProduct(String productName);
-    +printProduct(Product product);
 }
 
 @enduml
