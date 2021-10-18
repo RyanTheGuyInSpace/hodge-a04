@@ -1,0 +1,13 @@
+@startuml
+
+class WordFinder {
+    -BufferedReader reader;
+    -BufferedWriter writer;
+    -String content;
+
+    +writeToFile(String fileName)
+    +readContent(String fileName)
+    +replaceWord(String targetWord, String replacementWord)
+}
+
+@enduml
