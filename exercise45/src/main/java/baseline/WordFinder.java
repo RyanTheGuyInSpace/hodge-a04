@@ -5,8 +5,9 @@
 
 package baseline;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class WordFinder {
     private BufferedReader reader;
@@ -18,7 +19,16 @@ public class WordFinder {
      * @param fileName The name of the file to write the content String into.
      */
     public void writeToFile(String fileName) {
+        try {
+            writer = new BufferedWriter(new FileWriter(String.format("data/%s", fileName)));
 
+            writer.write(this.content);
+
+            writer.flush();
+        } catch (IOException e) {
+            System.out.println("ERROR");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -26,7 +36,14 @@ public class WordFinder {
      * @param fileName The name of the file to read into the content String.
      */
     public void readContent(String fileName) {
+        try {
+            reader = new BufferedReader(new FileReader(String.format("data/%s", fileName)));
 
+            content = Files.readString(Path.of(String.format("data/%s", fileName)));
+        } catch (IOException e) {
+            System.out.println("ERROR");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -35,6 +52,6 @@ public class WordFinder {
      * @param replacementWord The word that will replace every instance of the targetWord.
      */
     public void replaceWord(String targetWord, String replacementWord) {
-
+        this.content = this.content.replace(targetWord, replacementWord);
     }
 }
